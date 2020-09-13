@@ -65,8 +65,9 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:background="@android:color/transparent"
             android:minHeight="?attr/actionBarSize"
             android:layout_marginTop="20dp"
@@ -76,6 +77,7 @@
             app:tabIndicatorFullWidth="false"
             app:tabMode="scrollable"
             android:textAlignment="center"
+            app:tabTextAppearance="@style/MyTextAppearance"
             app:tabSelectedTextColor="@android:color/black"
             app:tabTextColor="@android:color/darker_gray"/>
 

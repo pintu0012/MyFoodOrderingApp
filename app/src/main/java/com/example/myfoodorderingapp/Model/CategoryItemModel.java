@@ -1,6 +1,8 @@
 package com.example.myfoodorderingapp.Model;
 
-public class CategoryItemModel {
+import java.io.Serializable;
+
+public class CategoryItemModel implements Serializable {
     private String id;
     private String title;
     private int image;

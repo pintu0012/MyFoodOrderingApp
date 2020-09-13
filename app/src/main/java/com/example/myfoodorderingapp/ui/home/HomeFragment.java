@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText("Rating"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        HomeTabLayoutAdapter categoryTabLayoutAdapter = new HomeTabLayoutAdapter(getActivity(), getChildFragmentManager(), tabLayout.getTabCount());
+        HomeTabLayoutAdapter categoryTabLayoutAdapter = new HomeTabLayoutAdapter(getActivity(), getChildFragmentManager(), tabLayout.getTabCount(),"");
         viewPager.setAdapter(categoryTabLayoutAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 

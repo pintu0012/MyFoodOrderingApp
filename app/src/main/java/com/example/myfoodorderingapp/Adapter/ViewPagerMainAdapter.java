@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.bumptech.glide.Glide;
 import com.example.myfoodorderingapp.Model.RestaurantSliderModel;
 import com.example.myfoodorderingapp.R;
 
@@ -34,7 +35,9 @@ public class ViewPagerMainAdapter extends PagerAdapter {
         View item = LayoutInflater.from(container.getContext()).inflate(R.layout.view_pager_main_item, container, false);
         ImageView imageView = item.findViewById(R.id.imageview);
 
-        imageView.setImageResource(itemList.get(position).getImage());
+//        imageView.setImageResource(itemList.get(position).getImage());
+
+        Glide.with(context).load(itemList.get(position).getImageLink()).into(imageView);
 
         container.addView(item);
         return item;

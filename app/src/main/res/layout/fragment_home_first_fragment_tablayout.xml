@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layoutAnimation="@anim/recycler_view_layout_animation"
         android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_gravity="center_horizontal"/>
 
     <RelativeLayout

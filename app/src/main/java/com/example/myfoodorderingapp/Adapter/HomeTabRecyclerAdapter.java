@@ -55,6 +55,7 @@ public class HomeTabRecyclerAdapter extends RecyclerView.Adapter<HomeTabRecycler
 
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(activity);
                 Intent intent = new Intent(context, RestaurantActivity.class);
+                intent.putExtra("MODEL", itemList.get(position));
                 context.startActivity(intent, options.toBundle());
 
             }

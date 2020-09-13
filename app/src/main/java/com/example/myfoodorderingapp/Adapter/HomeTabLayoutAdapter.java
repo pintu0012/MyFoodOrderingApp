@@ -1,51 +1,1 @@
-package com.example.myfoodorderingapp.Adapter;
-
-import android.content.Context;
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-
-import com.example.myfoodorderingapp.Fragment.HomeTabLayoutFirstFragment;
-import com.example.myfoodorderingapp.Fragment.HomeTabLayoutFourthFragment;
-import com.example.myfoodorderingapp.Fragment.HomeTabLayoutSecondFragment;
-import com.example.myfoodorderingapp.Fragment.HomeTabLayoutThirdFragment;
-
-public class HomeTabLayoutAdapter extends FragmentPagerAdapter {
-
-    private Context myContext;
-    int totalTabs;
-
-    public HomeTabLayoutAdapter(Context context, FragmentManager fm, int totalTabs) {
-        super(fm);
-        myContext = context;
-        this.totalTabs = totalTabs;
-    }
-
-    // this is for fragment tabs
-    @Override
-    public Fragment getItem(int position) {
-        switch (position) {
-            case 0:
-                HomeTabLayoutFirstFragment homeTabLayoutFirstFragment = new HomeTabLayoutFirstFragment();
-                return homeTabLayoutFirstFragment;
-            case 1:
-                HomeTabLayoutSecondFragment homeTabLayoutSecondFragment= new HomeTabLayoutSecondFragment();
-                return homeTabLayoutSecondFragment;
-            case 2:
-                HomeTabLayoutThirdFragment homeTabLayoutThirdFragment= new HomeTabLayoutThirdFragment();
-                return homeTabLayoutThirdFragment;
-            case 3:
-                HomeTabLayoutFourthFragment homeTabLayoutFourthFragment= new HomeTabLayoutFourthFragment();
-                return homeTabLayoutFourthFragment;
-            default:
-                return null;
-        }
-    }
-    // this counts total number of tabs
-    @Override
-    public int getCount() {
-        return totalTabs;
-    }
-}
+package com.example.myfoodorderingapp.Adapter;import android.content.Context;import android.os.Bundle;import androidx.fragment.app.Fragment;import androidx.fragment.app.FragmentManager;import androidx.fragment.app.FragmentPagerAdapter;import com.example.myfoodorderingapp.Fragment.HomeTabLayoutFirstFragment;import com.example.myfoodorderingapp.Fragment.HomeTabLayoutFourthFragment;import com.example.myfoodorderingapp.Fragment.HomeTabLayoutSecondFragment;import com.example.myfoodorderingapp.Fragment.HomeTabLayoutThirdFragment;public class HomeTabLayoutAdapter extends FragmentPagerAdapter {    private Context myContext;    int totalTabs;    private String isFrom="";    public HomeTabLayoutAdapter(Context context, FragmentManager fm, int totalTabs, String isFrom) {        super(fm);        myContext = context;        this.totalTabs = totalTabs;        this.isFrom = isFrom;    }    // this is for fragment tabs    @Override    public Fragment getItem(int position) {        switch (position) {            case 0:                HomeTabLayoutFirstFragment homeTabLayoutFirstFragment = new HomeTabLayoutFirstFragment();                Bundle bundle = new Bundle();                bundle.putString("isFrom", isFrom);                homeTabLayoutFirstFragment.setArguments(bundle);                return homeTabLayoutFirstFragment;            case 1:                HomeTabLayoutSecondFragment homeTabLayoutSecondFragment= new HomeTabLayoutSecondFragment();                Bundle bundle1 = new Bundle();                bundle1.putString("isFrom", isFrom);                homeTabLayoutSecondFragment.setArguments(bundle1);                return homeTabLayoutSecondFragment;            case 2:                HomeTabLayoutThirdFragment homeTabLayoutThirdFragment= new HomeTabLayoutThirdFragment();                Bundle bundle2 = new Bundle();                bundle2.putString("isFrom", isFrom);                homeTabLayoutThirdFragment.setArguments(bundle2);                return homeTabLayoutThirdFragment;            case 3:                HomeTabLayoutFourthFragment homeTabLayoutFourthFragment= new HomeTabLayoutFourthFragment();                Bundle bundle3 = new Bundle();                bundle3.putString("isFrom", isFrom);                homeTabLayoutFourthFragment.setArguments(bundle3);                return homeTabLayoutFourthFragment;            default:                return null;        }    }    // this counts total number of tabs    @Override    public int getCount() {        return totalTabs;    }}

@@ -5,39 +5,22 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:fontFamily">@font/san_fransisco</item>
-
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+<!--        <item name="colorAccent">#DD571C</item>-->
         <!-- enable window content transitions -->
         <item name="android:windowActivityTransitions">true</item>
 
         <!-- specify enter and exit transitions -->
         <item name="android:windowEnterTransition">@transition/explode</item>
         <item name="android:windowExitTransition">@transition/explode</item>
-
-        <!-- specify shared element transitions -->
-<!--        <item name="android:windowSharedElementEnterTransition">-->
-<!--            @transition/change_image_transform</item>-->
-<!--        <item name="android:windowSharedElementExitTransition">-->
-<!--            @transition/change_image_transform</item>-->
 
     </style>
 
-    <style name="MyThemeNew" parent="android:Theme.Material">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:fontFamily">@font/san_fransisco</item>
+    <style name="MyTextAppearance" parent="TextAppearance.AppCompat">
 
-        <!-- enable window content transitions -->
-        <item name="android:windowActivityTransitions">true</item>
-
-        <!-- specify enter and exit transitions -->
-        <item name="android:windowEnterTransition">@transition/explode</item>
-        <item name="android:windowExitTransition">@transition/explode</item>
-
-        <!-- specify shared element transitions -->
-        <item name="android:windowSharedElementEnterTransition">
-            @transition/change_image_transform</item>
-        <item name="android:windowSharedElementExitTransition">
-            @transition/change_image_transform</item>
+        <item name="android:textAllCaps">false</item>
 
     </style>
 
