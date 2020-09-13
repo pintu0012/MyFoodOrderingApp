@@ -2,7 +2,6 @@ package com.example.myfoodorderingapp.Fragment;
 
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,6 @@ import android.view.animation.LayoutAnimationController;
 import android.widget.RelativeLayout;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +25,7 @@ public class HomeTabLayoutSecondFragment extends Fragment {
     private RecyclerView category_first_recycler;
     private ArrayList<CategoryItemModel> categoryModelArrayList;
     private RelativeLayout loading_layout;
+    private String isFrom;
     public HomeTabLayoutSecondFragment() {
     }
 
@@ -71,7 +70,7 @@ public class HomeTabLayoutSecondFragment extends Fragment {
                 LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getActivity(), resId);
                 category_first_recycler.setLayoutAnimation(animation);
             }
-            HomeTabRecyclerAdapter pAdapter = new HomeTabRecyclerAdapter(getActivity(),getActivity(), categoryModelArrayList);
+            HomeTabRecyclerAdapter pAdapter = new HomeTabRecyclerAdapter(getActivity(),getActivity(), categoryModelArrayList, isFrom);
             category_first_recycler.setAdapter(pAdapter);
         } else {
             category_first_recycler.setVisibility(View.GONE);

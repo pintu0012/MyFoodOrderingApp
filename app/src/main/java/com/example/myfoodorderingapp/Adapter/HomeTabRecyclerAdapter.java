@@ -9,16 +9,15 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myfoodorderingapp.Activity.MenuItemActivity;
 import com.example.myfoodorderingapp.Activity.RestaurantActivity;
 import com.example.myfoodorderingapp.Model.CategoryItemModel;
-import com.example.myfoodorderingapp.Model.HomeRecyclerModel;
 import com.example.myfoodorderingapp.R;
 
 import java.util.ArrayList;
@@ -29,12 +28,14 @@ public class HomeTabRecyclerAdapter extends RecyclerView.Adapter<HomeTabRecycler
     private Context context;
     private CardView cardView;
     private Activity activity;
+    private String isFrom="";
 
 
-    public HomeTabRecyclerAdapter(Activity activity,Context context, ArrayList<CategoryItemModel> itemList) {
+    public HomeTabRecyclerAdapter(Activity activity, Context context, ArrayList<CategoryItemModel> itemList, String isFrom) {
         this.itemList = itemList;
         this.context = context;
         this.activity = activity;
+        this.isFrom = isFrom;
     }
 
     @Override
@@ -53,10 +54,18 @@ public class HomeTabRecyclerAdapter extends RecyclerView.Adapter<HomeTabRecycler
             @Override
             public void onClick(View view) {
 
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(activity);
-                Intent intent = new Intent(context, RestaurantActivity.class);
-                intent.putExtra("MODEL", itemList.get(position));
-                context.startActivity(intent, options.toBundle());
+                if (isFrom.equals("RESTAURANT")){
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(activity);
+                    Intent intent = new Intent(context, MenuItemActivity.class);
+//                    intent.putExtra("MODEL", itemList.get(position));
+                    context.startActivity(intent, options.toBundle());
+                }
+                else {
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(activity);
+                    Intent intent = new Intent(context, RestaurantActivity.class);
+                    intent.putExtra("MODEL", itemList.get(position));
+                    context.startActivity(intent, options.toBundle());
+                }
 
             }
         });
